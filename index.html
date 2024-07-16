@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prachi Chhatbar - Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #ff9a9e;
+            --secondary-color: #fad0c4;
+            --text-color: #333;
+            --background-color: #fff5f5;
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
+            color: var(--text-color);
+            background-color: var(--background-color);
         }
         .container {
             max-width: 1100px;
@@ -29,6 +36,7 @@
             width: 100%;
             top: 0;
             z-index: 1;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         nav {
             display: flex;
@@ -43,20 +51,27 @@
             padding: 0 1rem;
         }
         nav ul li a {
-            color: #333;
+            color: var(--text-color);
             text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: var(--primary-color);
         }
         .hero {
-            background: #f0f0f0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding-top: 60px;
+            position: relative;
+            overflow: hidden;
         }
         .hero-content {
             max-width: 600px;
+            z-index: 1;
         }
         .profile-img {
             width: 200px;
@@ -65,24 +80,29 @@
             object-fit: cover;
             margin-bottom: 2rem;
             border: 5px solid #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
         }
         h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            color: #fff;
         }
         .btn {
             display: inline-block;
-            background: #3498db;
-            color: #fff;
+            background: #fff;
+            color: var(--primary-color);
             padding: 0.75rem 1.5rem;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             margin-top: 1rem;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: 600;
         }
         .btn:hover {
-            background: #2980b9;
+            background: var(--primary-color);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         .section {
             padding: 5rem 0;
@@ -90,16 +110,17 @@
         .section h2 {
             text-align: center;
             margin-bottom: 3rem;
+            color: var(--primary-color);
         }
-        .experience-item, .education-item {
+        .experience-item, .education-item, .project-item {
             background: #fff;
             margin-bottom: 2rem;
             padding: 2rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
-        .experience-item:hover, .education-item:hover {
+        .experience-item:hover, .education-item:hover, .project-item:hover {
             transform: translateY(-5px);
         }
         .skills {
@@ -108,11 +129,31 @@
             justify-content: center;
         }
         .skill {
-            background: #3498db;
-            color: #fff;
+            background: var(--secondary-color);
+            color: var(--text-color);
             padding: 0.5rem 1rem;
             margin: 0.5rem;
-            border-radius: 5px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .skill:hover {
+            background: var(--primary-color);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+        .flower {
+            position: absolute;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        #flower1 { top: 10%; left: 5%; animation: float 6s ease-in-out infinite; }
+        #flower2 { top: 60%; right: 5%; animation: float 8s ease-in-out infinite; }
+        #flower3 { bottom: 10%; left: 10%; animation: float 7s ease-in-out infinite; }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
         }
         @media (max-width: 768px) {
             nav ul {
@@ -129,43 +170,67 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
+        <img src="https://drive.google.com/file/d/1EGzCutC-akDibuaOhvayTDcoiQPy_E4y/view?usp=sharing" alt="Flower" class="flower" id="flower1">
+        <img src="https://drive.google.com/file/d/1EGzCutC-akDibuaOhvayTDcoiQPy_E4y/view?usp=sharing" alt="Flower" class="flower" id="flower2">
+        <img src="https://drive.google.com/file/d/1EGzCutC-akDibuaOhvayTDcoiQPy_E4y/view?usp=sharing" alt="Flower" class="flower" id="flower3">
         <div class="hero-content">
-            <img src="https://raw.githubusercontent.com/prachichhatbar/my-resume/main/profile-photo.jpg" alt="Prachi Chhatbar" class="profile-img">            
+            <img src="https://drive.google.com/file/d/15NqrRYDcu669Kac2K1ZdtQJ52V7Cq6gz/view?usp=sharing" alt="Prachi Chhatbar" class="profile-img">
             <h1>Prachi Chhatbar</h1>
-            <p>Software Engineer</p>
-            <a href="#" class="btn">Download CV</a>
-            <a href="#" class="btn">View Projects</a>
+            <p>💻 Software Engineer | 🚀 Full-Stack Developer | 🌐 DevOps Enthusiast</p>
+            <a href="https://drive.google.com/file/d/1-cCEHKkQT8lq9F4ciR5tsncegQfQrTf0/view?usp=sharing" class="btn" target="_blank">Download CV 📄</a>
+            <a href="#projects" class="btn">View Projects 🔍</a>
         </div>
     </section>
 
     <section id="about" class="section container">
-        <h2>About Me</h2>
-        <p>Results-driven Software Engineer with 3+ years of experience in full-stack development, DevOps, and web design. Demonstrates a strong customer-centric approach and a bias for action, consistently delivering scalable and efficient solutions in fast-paced Agile environments.</p>
+        <h2>About Me 👋</h2>
+        <p>Results-driven Software Engineer with 3+ years of experience in full-stack development, DevOps, and web design. Demonstrates a strong customer-centric approach and a bias for action, consistently delivering scalable and efficient solutions in fast-paced Agile environments. Improved portal efficiency by 30%, reduced render times by 25%, and increased user engagement by 40% through innovative problem-solving and continuous learning.</p>
     </section>
 
     <section id="experience" class="section container">
-        <h2>Experience</h2>
+        <h2>Experience 💼</h2>
         <div class="experience-item">
-            <h3>Junior Software Engineer</h3>
+            <h3>Junior Software Engineer 👨‍💻</h3>
             <p>Jellyfish Pictures, London, UK</p>
             <p>February 2024 - Present</p>
             <ul>
-                <li>Developed and maintained high-quality Python code within Rez packages</li>
-                <li>Collaborated with cross-functional teams using Bitbucket for version control</li>
-                <li>Utilized Deadline tool to manage render farm jobs, optimizing resource allocation</li>
+                <li>Developed and maintained high-quality Python code within Rez packages, reducing deployment times by 20%.</li>
+                <li>Collaborated with cross-functional teams using Bitbucket for version control, fostering a culture of ownership.</li>
+                <li>Utilized Deadline tool to manage render farm jobs, optimizing resource allocation and reducing render times by 25%.</li>
+                <li>Designed and implemented scalable APIs using FastAPI, handling 10,000+ requests per day.</li>
             </ul>
         </div>
-        <!-- Add more experience items here -->
+        <div class="experience-item">
+            <h3>Freelance Developer 🆓</h3>
+            <p>United Kingdom</p>
+            <p>January 2023 - Present</p>
+            <ul>
+                <li>Collaborated with 15+ clients to deliver high-quality web solutions.</li>
+                <li>Performed A/B testing and made data-driven decisions, increasing user engagement by 40%.</li>
+                <li>Managed end-to-end product lifecycle for 10+ projects, from ideation to deployment and maintenance.</li>
+            </ul>
+        </div>
+        <div class="experience-item">
+            <h3>Software Engineer I B 🏦</h3>
+            <p>Bank of America, India</p>
+            <p>July 2020 - September 2021</p>
+            <ul>
+                <li>Spearheaded design and development of SharePoint solutions, enhancing portal efficiency by 30%.</li>
+                <li>Optimized SharePoint libraries, lists, and sites, achieving 95% issue resolution within agreed SLAs.</li>
+                <li>Implemented SharePoint best practices, effectively mitigating risks and vulnerabilities for 20+ sites.</li>
+            </ul>
+        </div>
     </section>
 
     <section id="education" class="section container">
-        <h2>Education</h2>
+        <h2>Education 🎓</h2>
         <div class="education-item">
             <h3>MSc in Advanced Computer Science</h3>
             <p>University of Leicester, UK</p>
@@ -178,16 +243,48 @@
         </div>
     </section>
 
+    <section id="projects" class="section container">
+        <h2>Projects 🚀</h2>
+        <div class="project-item">
+            <h3>Web Based Social Media 📱</h3>
+            <p>June 2022 - September 2022</p>
+            <p>Developed an online media sharing service using React, Node.js, MongoDB, and AWS, serving 5,000+ users.</p>
+        </div>
+        <div class="project-item">
+            <h3>Automation of Build and Deploy (CI/CD) 🔄</h3>
+            <p>January 2020 - May 2020</p>
+            <p>Integrated CI/CD pipeline using Jenkins, Docker, and Kubernetes, improving software quality and reducing deployment times by 50%.</p>
+        </div>
+        <div class="project-item">
+            <h3>Cloud Monitoring and Resources Management ☁️</h3>
+            <p>July 2019 - November 2019</p>
+            <p>Utilized AWS services to monitor and manage cloud resources, reducing costs by 25%.</p>
+        </div>
+    </section>
+
     <section id="skills" class="section container">
-        <h2>Skills</h2>
+        <h2>Skills 🛠️</h2>
         <div class="skills">
             <span class="skill">JavaScript</span>
             <span class="skill">React</span>
             <span class="skill">Python</span>
             <span class="skill">Java</span>
+            <span class="skill">PHP</span>
+            <span class="skill">TypeScript</span>
+            <span class="skill">Node.js</span>
+            <span class="skill">Django</span>
+            <span class="skill">Laravel</span>
+            <span class="skill">React Native</span>
+            <span class="skill">MongoDB</span>
+            <span class="skill">PostgreSQL</span>
+            <span class="skill">MySQL</span>
             <span class="skill">AWS</span>
             <span class="skill">Docker</span>
-            <!-- Add more skills here -->
+            <span class="skill">Kubernetes</span>
+            <span class="skill">Jenkins</span>
+            <span class="skill">Git</span>
+            <span class="skill">REST API</span>
+            <span class="skill">HTML/CSS</span>
         </div>
     </section>
 
@@ -204,7 +301,7 @@
 
         // Animate items on scroll
         window.addEventListener('scroll', () => {
-            document.querySelectorAll('.experience-item, .education-item, .skill').forEach(item => {
+            document.querySelectorAll('.experience-item, .education-item, .project-item, .skill').forEach(item => {
                 const rect = item.getBoundingClientRect();
                 if (rect.top < window.innerHeight && rect.bottom >= 0) {
                     item.style.opacity = '1';
