@@ -3,101 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prachi Chhatbar - Resume</title>
+    <title>Prachi Chhatbar - Software Engineer</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            background-color: #f4f4f4;
         }
-        h1, h2 {
-            color: #2c3e50;
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 2rem;
+        }
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            padding: 0 1rem;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+        }
+        .hero {
+            background: #f0f0f0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 60px;
+        }
+        .hero-content {
+            max-width: 600px;
+        }
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            border: 5px solid #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #2980b9;
         }
         .section {
-            margin-bottom: 20px;
+            padding: 5rem 0;
         }
-        .job {
-            margin-bottom: 15px;
+        .section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
         }
-        .job-title {
-            font-weight: bold;
+        .experience-item, .education-item {
+            background: #fff;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
-        .job-details {
-            font-style: italic;
+        .experience-item:hover, .education-item:hover {
+            transform: translateY(-5px);
         }
-        ul {
-            padding-left: 20px;
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .skill {
+            background: #3498db;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Prachi Chhatbar</h1>
-    <p>Email: prachi.chhatbar@gmail.com | LinkedIn: Prachi Chhatbar | Location: London, United Kingdom</p>
-    
-    <div class="section">
-        <h2>Summary</h2>
-        <p>Software Engineer with 3+ years of experience in full-stack development, DevOps, and web design. Proficient in Python, JavaScript, and render farm management tools, with a passion for delivering scalable and efficient solutions in fast-paced Agile environments.</p>
-    </div>
-    
-    <div class="section">
-        <h2>Education</h2>
-        <p><strong>MSc in Advanced Computer Science</strong> - University of Leicester, Leicester, United Kingdom (September 2021 - January 2023)</p>
-        <p><strong>Bachelor of Technology in Information and Technology</strong> - Nirma University, Ahmedabad, India (2017 - 2020)</p>
-    </div>
-    
-    <div class="section">
-        <h2>Skills</h2>
-        <ul>
-            <li><strong>Programming:</strong> JavaScript, React, Python, Java, PHP, TypeScript</li>
-            <li><strong>Framework and Library:</strong> Node.js, Django, Laravel, React Native, Bootstrap, JQuery, FastAPI</li>
-            <li><strong>Database:</strong> MongoDB, PostgreSQL, MySQL, Elasticsearch</li>
-            <li><strong>DevOps and Cloud Computing:</strong> AWS, Docker, Kubernetes, Jenkins, Git, Bitbucket</li>
-            <li><strong>API and Messaging:</strong> REST API, Apache Kafka, Apache Shark, Firebase Cloud Messaging</li>
-            <li><strong>Web Technology:</strong> HTML, CSS</li>
-            <li><strong>Content Management System:</strong> Sharepoint</li>
-            <li><strong>Project Management Tool:</strong> Jira</li>
-            <li><strong>Testing Tool:</strong> Selenium, Cypress</li>
-            <li><strong>Render Farm and Pipeline Tools:</strong> Rez Package Management, Deadline Render Farm Management</li>
-        </ul>
-    </div>
-    
-    <div class="section">
+    <header>
+        <nav class="container">
+            <h2>Prachi Chhatbar</h2>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <img src="https://raw.githubusercontent.com/yourusername/your-repo-name/main/profile-photo.jpg" alt="Prachi Chhatbar" class="profile-img">            
+            <h1>Prachi Chhatbar</h1>
+            <p>Software Engineer</p>
+            <a href="#" class="btn">Download CV</a>
+            <a href="#" class="btn">View Projects</a>
+        </div>
+    </section>
+
+    <section id="about" class="section container">
+        <h2>About Me</h2>
+        <p>Results-driven Software Engineer with 3+ years of experience in full-stack development, DevOps, and web design. Demonstrates a strong customer-centric approach and a bias for action, consistently delivering scalable and efficient solutions in fast-paced Agile environments.</p>
+    </section>
+
+    <section id="experience" class="section container">
         <h2>Experience</h2>
-        <div class="job">
-            <p class="job-title">Junior Software Developer - Jellyfish Pictures</p>
-            <p class="job-details">London, United Kingdom (February 2024 - Present)</p>
+        <div class="experience-item">
+            <h3>Junior Software Engineer</h3>
+            <p>Jellyfish Pictures, London, UK</p>
+            <p>February 2024 - Present</p>
             <ul>
                 <li>Developed and maintained high-quality Python code within Rez packages</li>
                 <li>Collaborated with cross-functional teams using Bitbucket for version control</li>
-                <li>Utilized the Deadline tool to manage and monitor render farm jobs</li>
-                <li>Worked extensively with RESTful APIs and integrated them into Rez packages</li>
-                <li>Ingested data from Rez packages into Elasticsearch for efficient data analysis</li>
-                <li>Designed and implemented scalable APIs using FastAPI</li>
-                <li>Participated in code reviews and maintained high code quality standards</li>
-                <li>Created and maintained comprehensive documentation using Confluence</li>
+                <li>Utilized Deadline tool to manage render farm jobs, optimizing resource allocation</li>
             </ul>
         </div>
-        
-        <!-- Add more job experiences here -->
-    </div>
-    
-    <div class="section">
-        <h2>Projects</h2>
-        <ul>
-            <li><strong>Web Based Social Media</strong> (June 2022 - Sept 2022): Developed an online media sharing service using React, Node.js, MongoDB, and AWS</li>
-            <li><strong>Automation Of Build And Deploy (CI/CD)</strong> (Jan 2020 - May 2020): Integrated CI/CD pipeline using Jenkins, Docker, and Kubernetes</li>
-            <li><strong>Cloud Monitoring and Resources Management</strong> (July 2019 - Nov 2019): Utilized AWS services for efficient cloud resource management</li>
-            <!-- Add more projects here -->
-        </ul>
-    </div>
-    
-    <div class="section">
-        <h2>Award</h2>
-        <p><strong>Global Recognition: Bronze award</strong> (April 2021)</p>
-        <p>Quickly acquired necessary skills and made significant contributions to the GBS Hub project</p>
-    </div>
+        <!-- Add more experience items here -->
+    </section>
+
+    <section id="education" class="section container">
+        <h2>Education</h2>
+        <div class="education-item">
+            <h3>MSc in Advanced Computer Science</h3>
+            <p>University of Leicester, UK</p>
+            <p>September 2021 - January 2023</p>
+        </div>
+        <div class="education-item">
+            <h3>Bachelor of Technology in Information and Technology</h3>
+            <p>Nirma University, Ahmedabad, India</p>
+            <p>2017 - 2020</p>
+        </div>
+    </section>
+
+    <section id="skills" class="section container">
+        <h2>Skills</h2>
+        <div class="skills">
+            <span class="skill">JavaScript</span>
+            <span class="skill">React</span>
+            <span class="skill">Python</span>
+            <span class="skill">Java</span>
+            <span class="skill">AWS</span>
+            <span class="skill">Docker</span>
+            <!-- Add more skills here -->
+        </div>
+    </section>
+
+    <script>
+        // Simple scroll animation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animate items on scroll
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.experience-item, .education-item, .skill').forEach(item => {
+                const rect = item.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
